@@ -1,0 +1,38 @@
+﻿@model CreateEmployeeViewModel
+@using EMS.Models
+
+@{
+	ViewBag.Title = "Create Employee";
+}
+
+<form enctype="multipart/form-data" asp-controller="home" asp-action="create" method="post">
+
+	<div>
+		<label asp-for="Name"></label>
+		<input asp-for="Name" />
+		<span asp-validation-for="Name"></span>
+	</div>
+	<div>
+		<label asp-for="Email"></label>
+		<input asp-for="Email" type="email" />
+
+	</div>
+	<div>
+		<label asp-for="Department"></label>
+		<select asp-for="Department" asp-items="Html.GetEnumSelectList<Department>()">
+			<option value="">Please Select</option>
+		</select>
+
+		<span asp-validation-for="Department"></span>
+
+	</div>
+	<label asp-for="Photo"></label>
+	<input asp-for="Photo" type="file" />
+	<div>
+		<fi
+	</div>
+	<div>
+		<button type="submit">Create Employee</button>
+	</div>
+
+</form>

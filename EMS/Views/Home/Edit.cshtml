@@ -1,0 +1,43 @@
+﻿@model EditEmployeeViewModel
+@using EMS.Models
+
+@{
+	ViewBag.Title = "Update Employee";
+}
+
+<form asp-controller="home" asp-action="edit" method="post">
+
+	<input hidden asp-for="Id" />
+	<input hidden asp-for="PhotoPath" />
+
+	<div>
+		<label asp-for="Name"></label>
+		<input asp-for="Name" />
+		<span asp-validation-for="Name"></span>
+	</div>
+	<div>
+		<label asp-for="Email"></label>
+		<input asp-for="Email" type="email" />
+
+	</div>
+	<div>
+		<label asp-for="Department"></label>
+		<select asp-for="Department" asp-items="Html.GetEnumSelectList<Department>()">
+			<option value="">Please Select</option>
+		</select>
+
+		<span asp-validation-for="Department"></span>
+
+	</div>
+
+	<div>
+		<fi
+	</div>
+	<div>
+		<button type="submit">Update</button>
+	</div>
+	<div>
+		<button asp-action="index" asp-controller="home">Cancel</button>
+	</div>
+
+</form>
